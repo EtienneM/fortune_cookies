@@ -1,0 +1,25 @@
+version: '2'
+services:
+  richarme-cookies:
+    build: .
+    volumes:
+      - ./:/usr/src/app/
+    ports:
+      - 9292:9292
+    environment:
+      PORT: 9292
+      RAILS_ENV: development
+      MONGO_HOST: mongo
+      BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/2.4.0/bin"
+      BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/2.4.0"
+      BUNDLE_APP_CONFIG: "/usr/src/app/.bundle"
+      MONGO_HOST: 172.17.0.1:12345
+    command: bundle exec rails server -b 0.0.0.0 -p 9292 -e development
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - 12345:27017
+    volumes:
+      - ./docker/data:/data/db
