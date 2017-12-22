@@ -19,3 +19,5 @@ vendor/.bundle
 /yarn-error.log
 
 .byebug_history
+
+/docker
