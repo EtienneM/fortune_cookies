@@ -6,20 +6,33 @@ body {
   background-color: #fffdec;
   font-family: 'innocent_headline_bold', 'Open Sans', Helvetica, sans-serif;
   text-align: center;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-direction: column;
 
-  .wrapper {
-    text-align: left;
-    border-radius: 25px;
-    background: pink;
-    padding: 20px;
-    width: 25%;
-    height: 30%;
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+
+    .wrapper {
+      text-align: left;
+      border-radius: 25px;
+      background: pink;
+      padding: 20px;
+      width: 25%;
+      height: 30%;
+          display: inline-block;
+      vertical-align: middle;
+    }
+
+    .portrait {
+      margin-top: 21px;
+      height: 300px;
+
+      img {
+        height: 100%;
+      }
+    }
   }
 }
 
